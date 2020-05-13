@@ -19,8 +19,8 @@ steps:
   displayName: 'Run a multi-line script'
 - task: AzureRmWebAppDeployment@4
   inputs:
-  ConnectionType: 'AzureRM'
-  azureSubscription: 'Free Trial(d0bf3c95-4528-4b9e-a252-41d489c7fe27)'
-  appType: 'webApp'
-  WebAppName: 'devsystemapp'
-  packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Free Trial(d0bf3c95-4528-4b9e-a252-41d489c7fe27)'
+    appType: 'webApp'
+    WebAppName: 'devsystemapp'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'

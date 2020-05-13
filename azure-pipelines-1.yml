@@ -14,14 +14,13 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Free Trial(d0bf3c95-4528-4b9e-a252-41d489c7fe27)'
-    appType: 'webApp'
-    WebAppName: 'devsystemapp'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
-    displayName: 'Run a multi-line script'
-  
+  displayName: 'Run a multi-line script'
+  - task: AzureRmWebAppDeployment@4
+    inputs:
+      ConnectionType: 'AzureRM'
+      azureSubscription: 'Free Trial(d0bf3c95-4528-4b9e-a252-41d489c7fe27)'
+      appType: 'webApp'
+      WebAppName: 'devsystemapp'
+      packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'

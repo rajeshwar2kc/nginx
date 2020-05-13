@@ -24,3 +24,8 @@ steps:
     appType: 'webApp'
     WebAppName: 'devsystemapp'
     packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

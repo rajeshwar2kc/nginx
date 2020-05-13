@@ -17,6 +17,7 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
     ls && pwd
+    tar -cvf auto.tar auto
   displayName: 'Run a multi-line script'
 - task: AzureRmWebAppDeployment@4
   inputs:
@@ -24,9 +25,5 @@ steps:
     azureSubscription: 'Free Trial(d0bf3c95-4528-4b9e-a252-41d489c7fe27)'
     appType: 'webApp'
     WebAppName: 'devsystemapp'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
+    packageForLinux: '$(System.DefaultWorkingDirectory)/auto.tar'
+
